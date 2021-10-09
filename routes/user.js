@@ -4,7 +4,7 @@ const User = require("../models/User");
 // get all users
 router.get("/users", (req, res) => {
   User.find()
-    .then((users) => res.stutus(200).send(users))
+    .then((users) => res.status(200).send(users))
     .catch((err) => console.log(err));
 });
 
