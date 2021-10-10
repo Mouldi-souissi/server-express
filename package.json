@@ -1,11 +1,12 @@
 {
   "name": "back",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
@@ -16,5 +17,14 @@
     "express": "^4.17.1",
     "mongoose": "^6.0.10",
     "nodemon": "^2.0.13"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mouldi-souissi/server-express.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Mouldi-souissi/server-express/issues"
+  },
+  "homepage": "https://github.com/Mouldi-souissi/server-express#readme",
+  "description": ""
 }
