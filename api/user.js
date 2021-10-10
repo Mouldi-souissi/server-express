@@ -2,14 +2,14 @@ const router = require("express").Router();
 const User = require("../models/User");
 
 // get all users
-router.get("/users", (req, res) => {
+router.get("/", (req, res) => {
   User.find()
-    .then((users) => res.status(200).send(users))
+    .then((users) => res.status(200).json(users))
     .catch((err) => console.log(err));
 });
 
 // add user
-router.post("/users", (req, res) => {
+router.post("/", (req, res) => {
   const newUser = new User({
     name: req.body.name,
     email: req.body.email,
@@ -21,7 +21,7 @@ router.post("/users", (req, res) => {
 });
 
 // edit user
-router.patch("/users/:id", (req, res) => {
+router.patch("/:id", (req, res) => {
   const id = req.params.id;
   User.findByIdAndUpdate(id, req.body, { new: true })
     .then((updated) => res.status(200).send(updated))
@@ -29,7 +29,7 @@ router.patch("/users/:id", (req, res) => {
 });
 
 // delete user
-router.delete("/users/:id", (req, res) => {
+router.delete("/:id", (req, res) => {
   User.findByIdAndDelete(req.params.id)
     .then((deleted) => res.send(deleted))
     .catch((err) => console.log(err));

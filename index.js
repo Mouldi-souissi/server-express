@@ -9,7 +9,7 @@ require("dotenv").config();
 connectDB();
 
 // middlewars
-app.use(express.json());
+app.use(express.json({ extended: false }));
 app.use(cors());
 
 // routes
